@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>In App template: Item</h1>
+<p>{{ object.title }}</p>
+<p>{{ object.description }}</p>
+<p>{{ object.price }}</p>
+<p>{{ object.summary }}</p>
+<p>{% if object.featured %} Featured {% else %} Not Featured {% endif %}</p>
+{% endblock %}

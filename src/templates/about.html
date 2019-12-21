@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>About</h1>
+    <p>This is a template</p>
+    
+    <h3>{{ author|capfirst }}</h3>
+    <p>{{ context_introduction }}</p>
+    <p>{{ context_number }}, {{ context_list }}</p>
+    
+    {{ html|safe }}
+    
+    {{ datetime|date:"D d M Y" }} {{ datetime|time:"H:i" }}
+    
+    <url>
+        {% for sub_item in context_list %}
+            {% if sub_item == 345 %}
+                <li>{{ forloop.counter }} - {{ sub_item|add:1000 }}</li>
+            {% elif sub_item == 'abc' %}
+                <li>Found a string "abc"</li>
+            {% else %}
+                <li>{{ forloop.counter }} - {{ sub_item }}</li>
+            {% endif %}
+        {% endfor %}
+    </url>
+{% endblock %}
+
+{% block content2 %}
+    <p>about2</p>
+{% endblock %}
+        
+{% block content3 %}
+    <p>about3</p>
+{% endblock %}
