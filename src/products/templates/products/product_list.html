@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>All products</h1>
+{% for object in object_list %}
+    <p>
+    {{ object.id }} - 
+    <a href= '{{ object.get_absolute_url }}'>{{ object.title }}</a> - 
+    {{ object.description }} - 
+    ${{ object.price }} - 
+    {{ object.summary }} - 
+    {% if object.featured %} Featured {% else %} Not Featured {% endif %}
+    </p>
+{% endfor %}
+{% endblock %}
