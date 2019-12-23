@@ -1,0 +1,2 @@
+# TryDjango
+Django learning sample
